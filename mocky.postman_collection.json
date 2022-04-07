@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "41bcc987-4734-4d02-bfc6-3503fd9897cb",
+		"name": "mocky",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "mocky.io",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://run.mocky.io/v3/62aa820c-8e42-43e7-8897-6f154b2537",
+							"protocol": "https",
+							"host": [
+								"run",
+								"mocky",
+								"io"
+							],
+							"path": [
+								"v3",
+								"62aa820c-8e42-43e7-8897-6f154b2537"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://www.mocky.io/v2/5ab350d62f00005a00ca3663",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(202);\r",
+									"});\r",
+									"const jsonData = pm.response.json();\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(jsonData).to.be.an(\"object\");\r",
+									"  pm.expect(jsonData.companyId).to.be.a(\"number\");\r",
+									"  pm.expect(jsonData.filters).to.be.an(\"array\");\r",
+									" \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://www.mocky.io/v2/5ab350d62f00005a00ca3663",
+							"protocol": "http",
+							"host": [
+								"www",
+								"mocky",
+								"io"
+							],
+							"path": [
+								"v2",
+								"5ab350d62f00005a00ca3663"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
