@@ -30,14 +30,14 @@
 					"response": []
 				},
 				{
-					"name": "http://www.mocky.io/v2/5ab350d62f00005a00ca3663",
+					"name": "mockey",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"pm.test(\"Status test\", function () {\r",
-									"    pm.response.to.have.status(202);\r",
+									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"const jsonData = pm.response.json();\r",
 									"pm.test(\"Test data type of the response\", () => {\r",
